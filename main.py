@@ -2,7 +2,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-url = 'https://www.imdb.com/search/title/?count=100&groups=top_1000&sort=user_rating'
+url = 'https://www.imdb.com/search/title/?count=100&groups=top_1000&sort=user_rating' # name of the site we are scrapping
 response = requests.get(url)
 soup = BeautifulSoup(response.content,'html.parser')
 
@@ -46,3 +46,4 @@ movie_DF = pd.DataFrame({'Name of the Movie': movie_name, 'Year of Release': yea
 movie_DF.index += 1
 
 print(movie_DF.head(30))
+#showing the first 30 in the list
